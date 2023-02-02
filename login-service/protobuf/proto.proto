@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package protobuf;
+
+option go_package="./protobuf";
+
+
+message LoginRequest{
+    string Email = 1;
+    string Password = 2;
+}
+
+message LoginResponse{
+    string Status =1;
+    string Email = 2;
+}
+
+service Reg{
+    // login service gRPC api
+    rpc Login(LoginRequest) returns (LoginResponse){};
+}

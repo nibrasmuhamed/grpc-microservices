@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package protobuf;
+
+option go_package="./protobuf";
+
+message Request{
+    string Name = 1;
+    string Email = 2;
+    string Password = 3;
+}
+
+message Response{
+    string Name = 1; 
+    string Email = 2; 
+    string Data = 3;
+}
+
+service Reg{
+    // for register service implimentation
+    rpc SignUp (Request) returns (Response){};
+}
